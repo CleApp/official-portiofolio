@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TechPhone - Premium Smartphones</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<style>
+  /* Global Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    line-height: 1.6;
+    color: #333;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 5%;
+    background-color: #fff;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.logo h1 {
+    color: #2c3e50;
+    font-size: 1.8rem;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+}
+
+nav ul li {
+    margin-left: 2rem;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #2c3e50;
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+nav ul li a:hover {
+    color: #3498db;
+}
+
+.cart-icon {
+    position: relative;
+    cursor: pointer;
+    font-size: 1.5rem;
+    color: #2c3e50;
+}
+
+.cart-count {
+    position: absolute;
+    top: -10px;
+    right: -10px;
+    background-color: #e74c3c;
+    color: white;
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 0.8rem;
+}
+
+/* Hero Section */
+.hero {
+    height: 80vh;
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), 
+                url('https://plus.unsplash.com/premium_photo-1675014768031-7bf2773a0b75?q=80&w=1964&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D') center/cover no-repeat;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+}
+
+.hero-content h2 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+.hero-content p {
+    font-size: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.shop-now {
+    padding: 0.8rem 2rem;
+    background-color: #3498db;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.shop-now:hover {
+    background-color: #2980b9;
+}
+
+/* Featured Products */
+.featured-products {
+    padding: 5rem 5%;
+    text-align: center;
+}
+
+.featured-products h2 {
+    font-size: 2.5rem;
+    margin-bottom: 3rem;
+    color: #2c3e50;
+}
+
+.products-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.product-card {
+    background-color: #fff;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s;
+}
+
+.product-card:hover {
+    transform: translateY(-10px);
+}
+
+.product-image {
+    height: 250px;
+    background-color: #f5f5f5;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.product-image img {
+    max-width: 80%;
+    max-height: 80%;
+}
+
+.product-info {
+    padding: 1.5rem;
+}
+
+.product-info h3 {
+    font-size: 1.3rem;
+    margin-bottom: 0.5rem;
+}
+
+.product-info p {
+    color: #7f8c8d;
+    margin-bottom: 1rem;
+}
+
+.product-price {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #2c3e50;
+    margin-bottom: 1rem;
+}
+
+.add-to-cart {
+    width: 100%;
+    padding: 0.8rem;
+    background-color: #2ecc71;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.add-to-cart:hover {
+    background-color: #27ae60;
+}
+
+/* Brands Section */
+.brands {
+    padding: 5rem 5%;
+    background-color: #f9f9f9;
+    text-align: center;
+}
+
+.brands h2 {
+    font-size: 2.5rem;
+    margin-bottom: 3rem;
+    color: #2c3e50;
+}
+
+.brand-logos {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 3rem;
+}
+
+.brand-logos img {
+    height: 80px;
+    object-fit: contain;
+    filter: grayscale(100%);
+    opacity: 0.7;
+    transition: all 0.3s;
+}
+
+.brand-logos img:hover {
+    filter: grayscale(0);
+    opacity: 1;
+}
+
+/* Footer */
+footer {
+    background-color: #2c3e50;
+    color: white;
+    padding: 3rem 5% 1rem;
+}
+
+.footer-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin-bottom: 2rem;
+}
+
+.footer-section h3 {
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.footer-section ul {
+    list-style: none;
+}
+
+.footer-section ul li {
+    margin-bottom: 0.8rem;
+}
+
+.footer-section ul li a {
+    color: #bdc3c7;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.footer-section ul li a:hover {
+    color: white;
+}
+
+.footer-bottom {
+    text-align: center;
+    padding-top: 1.5rem;
+    border-top: 1px solid #34495e;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        padding: 1rem;
+    }
+
+    nav ul {
+        margin-top: 1rem;
+    }
+
+    nav ul li {
+        margin-left: 1rem;
+    }
+
+    .hero-content h2 {
+        font-size: 2rem;
+    }
+
+    .hero-content p {
+        font-size: 1.2rem;
+    }
+}
+</style>
+<body>
+    <!-- Header/Navbar -->
+    <header>
+        <div class="logo">
+            <h1>TechPhone</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#products">Products</a></li>
+                <li><a href="#brands">Brands</a></li>
+                <li><a href="#deals">Deals</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+        <div class="cart-icon">
+            <i class="fas fa-shopping-cart"></i>
+            <span class="cart-count">0</span>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <h2>Latest Smartphones</h2>
+            <p>Get the best deals on premium phones</p>
+            <button class="shop-now">Shop Now</button>
+        </div>
+    </section>
+
+    <!-- Featured Products -->
+    <section class="featured-products" id="products">
+        <h2>Featured Phones</h2>
+        <div class="products-container">
+            <!-- Product cards will be inserted here by JavaScript -->
+        </div>
+    </section>
+
+    <!-- Brands Section -->
+    <section class="brands" id="brands">
+        <h2>Our Brands</h2>
+        <div class="brand-logos">
+            <img src='https://images.unsplash.com/photo-1609538106201-e0dc68873410?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8QXBwbGUlMjBsb2dvfGVufDB8fDB8fHww' alt="Apple">
+            <img src='https://images.unsplash.com/photo-1661347998423-b15d37d6f61e?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8c2Ftc3VuZyUyMGxvZ298ZW58MHx8MHx8fDA%3D' alt="Samsung">
+            <img src='https://images.unsplash.com/photo-1662947190722-5d272f82a526?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8Z29vZ2xlJTIwbG9nb3xlbnwwfHwwfHx8MA%3D%3D' alt="Google">
+            <img src='https://wallpaperaccess.com/full/1639999.jpg' alt="OnePlus">
+            <img src='https://th.bing.com/th/id/OIP.-Wus1_750zPGjKyWXcjFUQHaGB?w=196&h=180&c=7&r=0&o=5&dpr=1.3&pid=1.7' alt="Xiaomi">
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="contact">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>About Us</h3>
+                <p>TechPhone brings you the latest smartphones at competitive prices with excellent customer service.</p>
+            </div>
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">Products</a></li>
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Contact Us</h3>
+                <p>Email: info@techphone.com</p>
+                <p>Phone: +1 (555) 123-4567</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2023 TechPhone. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+      // Sample product data
+const products = [
+    {
+        id: 1,
+        name: "iPhone 15 Pro",
+        description: "Latest Apple flagship with A17 Pro chip",
+        price: 999,
+        image: "https://images.unsplash.com/photo-1703434123142-1b41a1b1055b?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTN8fGlwaG9uZSUyMDE1fGVufDB8fDB8fHww"
+    },
+    {
+        id: 2,
+        name: "Samsung Galaxy S23 Ultra",
+        description: "Powerful Android phone with S Pen",
+        price: 1199,
+        image: "https://m-cdn.phonearena.com/images/reviews/247665-image/S23-Ultra-colors.jpg"
+    },
+    {
+        id: 3,
+        name: "Google Pixel 8 Pro",
+        description: "Best camera phone with Google AI",
+        price: 899,
+        image: "https://www.cnet.com/a/img/resize/6142a7250e3f583d8345418a20458363e5537705/hub/2023/09/27/0a945a62-cd4e-49e9-8dae-76d9ab594067/20230925-google-pixel-8-pro-04.jpg?auto=webp&fit=crop&height=675&width=1200"
+    },
+    {
+        id: 4,
+        name: "OnePlus 11",
+        description: "Flagship killer with Snapdragon 8 Gen 2",
+        price: 699,
+        image: "https://tse3.mm.bing.net/th/id/OIP.aeHCpFJBWtjA4QLTJoX2cAHaDP?rs=1&pid=ImgDetMain"
+    },
+    {
+        id: 5,
+        name: "Xiaomi 13 Pro",
+        description: "Premium phone with Leica camera",
+        price: 999,
+        image: "https://th.bing.com/th/id/OIP._d9cYPkiS2jUNvR2e29slAHaFj?w=266&h=200&c=7&r=0&o=5&dpr=1.3&pid=1.7"
+    },
+    {
+        id: 6,
+        name: "Nothing Phone 2",
+        description: "Unique design with Glyph interface",
+        price: 599,
+        image: "https://th.bing.com/th/id/OIP.PIoSCkpJEfuyWkag99y8lQHaEK?w=277&h=180&c=7&r=0&o=5&dpr=1.3&pid=1.7"
+    }
+];
+
+// Cart functionality
+let cart = [];
+
+// Display products
+function displayProducts() {
+    const productsContainer = document.querySelector('.products-container');
+    
+    products.forEach(product => {
+        const productCard = document.createElement('div');
+        productCard.className = 'product-card';
+        
+        productCard.innerHTML = `
+            <div class="product-image">
+                <img src="${product.image}" alt="${product.name}">
+            </div>
+            <div class="product-info">
+                <h3>${product.name}</h3>
+                <p>${product.description}</p>
+                <div class="product-price">$${product.price}</div>
+                <button class="add-to-cart" data-id="${product.id}">Add to Cart</button>
+            </div>
+        `;
+        
+        productsContainer.appendChild(productCard);
+    });
+    
+    // Add event listeners to all "Add to Cart" buttons
+    document.querySelectorAll('.add-to-cart').forEach(button => {
+        button.addEventListener('click', addToCart);
+    });
+}
+
+// Add to cart function
+function addToCart(e) {
+    const productId = parseInt(e.target.getAttribute('data-id'));
+    const product = products.find(p => p.id === productId);
+    
+    // Check if product is already in cart
+    const existingItem = cart.find(item => item.id === productId);
+    
+    if (existingItem) {
+        existingItem.quantity += 1;
+    } else {
+        cart.push({
+            ...product,
+            quantity: 1
+        });
+    }
+    
+    updateCartCount();
+    // In a real app, you might want to show a notification here
+    alert(`${product.name} added to cart!`);
+}
+
+// Update cart count in header
+function updateCartCount() {
+    const totalItems = cart.reduce((total, item) => total + item.quantity, 0);
+    document.querySelector('.cart-count').textContent = totalItems;
+}
+
+// Initialize the page
+document.addEventListener('DOMContentLoaded', () => {
+    displayProducts();
+    
+    // Cart icon click event
+    document.querySelector('.cart-icon').addEventListener('click', () => {
+        // In a real app, this would open a cart modal or page
+        alert(`You have ${cart.reduce((total, item) => total + item.quantity, 0)} items in your cart.`);
+    });
+    
+    // Shop now button click event
+    document.querySelector('.shop-now').addEventListener('click', () => {
+        document.querySelector('#products').scrollIntoView({
+            behavior: 'smooth'
+        });
+    });
+});
+    </script>
+</body>
+</html>
