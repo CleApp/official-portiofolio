@@ -107,6 +107,7 @@ a:hover {
 .btn-primary:hover {
     background-color: var(--accent-red-light);
     border-color: var(--accent-red-light);
+    color: var(--white);
     box-shadow: 0 8px 20px rgba(231, 76, 60, 0.7);
     transform: translateY(-3px); /* More pronounced lift */
 }
