@@ -614,6 +614,11 @@ hr {
     margin-top: 40px;
     font-size: 1.15em;
 }
+.cv{
+border: 10px solid orangered;
+  
+}
+
 
 .social-links {
     margin-top: 50px;
