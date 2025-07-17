@@ -614,10 +614,9 @@ hr {
     margin-top: 40px;
     font-size: 1.15em;
 }
-.cv{
-border: 10px solid orangered;
-  border-raduis:20%;
-  
+.cv {
+  border: 10px solid orangered;
+  border-radius: 20%;
 }
 
 
@@ -757,11 +756,17 @@ footer {
     h1 {
         font-size: 2.8em;
     }
-    .img{
-        width: 40px;
-        margin-right: 96%;
-    
-    }
+.img {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+.img img {
+  width: 250px;
+  height: 250px;
+}
+
     .cta-buttons{
         margin-left: 17%;
         width: 180px;
@@ -791,4 +796,79 @@ footer {
     .project-card img, .design-card img {
         height: 200px;
     }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* CV Section Base Styles */
+.cv {
+  width: 100%;
+  max-width: 820px;
+  height: 500px;
+  border: 10px solid orangered;
+  border-radius: 20px;
+  display: block;
+  margin: 0 auto 20px;
+  box-shadow: 0 8px 16px rgba(0,0,0,0.15);
+}
+
+/* CV Section Wrapper (optional for layout control) */
+.contact-section {
+  padding: 40px 20px;
+  text-align: center;
+}
+
+/* Download Button spacing */
+.contact-section .btn-primary {
+  margin-top: 10px;
+}
+
+/* Responsive Tweaks */
+@media (max-width: 768px) {
+  .cv {
+    height: 400px;
+    max-width: 95%;
+  }
+}
+
+@media (max-width: 480px) {
+  .cv {
+    height: 300px;
+    max-width: 100%;
+    border-width: 6px;
+  }
+
+  .contact-section h1 {
+    font-size: 1.5rem;
+  }
+
+  .contact-section .btn-primary {
+    font-size: 0.9rem;
+    padding: 10px 18px;
+  }
 }
