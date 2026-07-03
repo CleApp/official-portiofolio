@@ -84,4 +84,3 @@
     // You would add more JavaScript here for:
     // 1. Form submission (e.g., using Fetch API to send data to a serverless function)
     // 2. Any other complex animations or dynamic content loading.
-});
